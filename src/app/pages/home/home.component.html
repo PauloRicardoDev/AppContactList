@@ -1,0 +1,103 @@
+<main class="main">
+  <header class="main__header">
+    <aside class="main__header-containerLogo">
+      <img class="main__header-containerLogo-img" src="/assets/svg/logo.svg" alt="logo na cor azul">
+      <span class="main__header-containerLogo-text">AppContactList</span>
+    </aside>
+    <button (click)="logout()" class="main__header-btn">
+      <span class="material-symbols-outlined">logout</span>
+      <p>Logout</p>
+    </button>
+  </header>
+
+  <section class="main__contacts">
+    <div class="main__contacts-salutation">
+      <h1 class="main__contacts-salutation-title">Seja bem vindo(a):</h1>
+      <div *ngIf="userName$ | async as userName; else notLoggedIn">
+        <p>{{ userName }}!</p>
+      </div>
+      <ng-template #notLoggedIn>
+        <p>Please log in.</p>
+      </ng-template>
+    </div>
+
+    <div class="main__contacts-addEndEdit">
+      <h2 class="main__contacts-addEndEdit-title">{{ isEditMode ? 'Editar Contato' : 'Adicionar Contato' }}</h2>
+      <p>Preencha os campos corretamente!</p>
+      <p class="textError">{{textError}}</p>
+      <form class="main__contacts-addEndEdit-form" (ngSubmit)="saveContact()">
+        <input class="main__contacts-addEndEdit-form-input" type="text"
+               [(ngModel)]="contact.name" name="name" placeholder="Nome" required>
+        <input class="main__contacts-addEndEdit-form-input" type="email"
+               [(ngModel)]="contact.email" name="email" placeholder="Email" required>
+        <input class="main__contacts-addEndEdit-form-input" type="text"
+               [(ngModel)]="contact.telephone" name="telephone"
+               placeholder="Telefone" required
+               appPhoneMask>
+        <button [disabled]="contact.name === '' || contact.email === '' || contact.telephone === '' "
+                class="main__contacts-addEndEdit-form-btn" type="submit">
+          <span class="material-symbols-outlined">add</span>
+          {{ isEditMode ? 'Salvar' : 'Adicionar Contato' }}
+        </button>
+      </form>
+    </div>
+
+    <div class="main__contacts-infos">
+      <h2 class="main__contacts-infos-title">Lista de Contatos</h2>
+      <p style="margin-bottom: 1rem">Preencha os campos corretamente!</p>
+
+      <p *ngIf="(contacts | async)?.length === 0" class="main__contacts-infos-subtitle">
+        Você não possui contatos cadastrados!
+      </p>
+
+      <div *ngIf="contacts | async as contactList" class="main__contacts-containerList">
+
+        <div *ngIf="contactList.length > 0" class="main__contacts-containerList-search">
+          <input class="main__contacts-containerList-search-input"
+                 (keyup)="applyFilter($event)" placeholder="Pesquisar">
+          <span class="main__contacts-containerList-search-inputIcon material-symbols-outlined">search</span>
+        </div>
+
+        <table *ngIf="contactList.length > 0" mat-table [dataSource]="dataSource" matSort
+               class="main__contacts-containerList-table">
+
+          <ng-container matColumnDef="name">
+            <th class="item"  mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+            <td class="item"  mat-cell *matCellDef="let contact"> {{ contact.name }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="email" >
+            <th class="remove"  mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+            <td class="remove" mat-cell *matCellDef="let contact"> {{ contact.email }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="telephone">
+            <th class="item" mat-header-cell *matHeaderCellDef mat-sort-header> Telefone </th>
+            <td class="item" mat-cell *matCellDef="let contact"> {{ contact.telephone }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th class="item" mat-header-cell *matHeaderCellDef> Ações </th>
+            <td class="item" mat-cell *matCellDef="let contact">
+              <button class="main__contacts-containerList-table-btn" (click)="editContact(contact)">
+                <span class="main__contacts-containerList-table-btn-iconEdit material-symbols-outlined">edit</span>
+              </button>
+              <button class="main__contacts-containerList-table-btn" (click)="deleteContact(contact.key)">
+                <span class="main__contacts-containerList-table-btn-iconDelete material-symbols-outlined">delete</span>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator
+          style="background: #f5f5f5"
+          *ngIf="contactList.length > 0"
+          [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+      </div>
+    </div>
+  </section>
+</main>

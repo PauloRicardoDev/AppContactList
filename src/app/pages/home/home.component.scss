@@ -1,0 +1,218 @@
+@import "home-responsive.component";
+
+.main{
+  //background-image: url("/assets/banner-background-contacts.png");
+  //background-size: cover;
+  //background-repeat: no-repeat;
+  //background-position: center;
+  height: 100vh;
+
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+
+    &-containerLogo{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: .5rem;
+
+      &-img{
+        width: 50px;
+      }
+
+      &-text{
+        font-weight: bold;
+        color: #6b00ff;
+      }
+    }
+
+    &-btn{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: #6b00ff;
+      padding: .5rem 1rem;
+      border-radius: 10px;
+      color: white;
+      gap: .5rem;
+      transition: 1s;
+      cursor: pointer;
+
+      &:hover{
+        background: #ff0068;
+        transition: 1s;
+      }
+    }
+  }
+
+  &__contacts{
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 70vh;
+    gap: 2rem;
+    padding: 0 2rem 2rem 2rem;
+
+    &-salutation{
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: .5rem;
+
+      &-title{
+        font-size: 1rem;
+      }
+    }
+
+    &-infos{
+      width: 100%;
+      margin: 0 auto;
+
+      &-title{
+
+      }
+
+      &-subtitle{
+        margin: 1.5rem 0;
+        color: #ff0068;
+      }
+
+      &-list{
+        &-item{
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 1rem;
+          padding-bottom: 1rem;
+          border-bottom: 2px solid #bbbbbb;
+          margin-bottom: 1rem;
+
+          &-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            padding: .5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+
+            &:hover{
+              background: #6b00ff;
+              color: white;
+              transition: 1s;
+            }
+          }
+        }
+      }
+
+      &-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+        margin-top: 1rem;
+
+        &:hover{
+          background: #6b00ff;
+          color: white;
+          transition: 1s;
+        }
+      }
+    }
+
+    &-containerList{
+      &-search{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 500px;
+        border-radius: 10px;
+        background:#efefef;
+        margin: 1rem 0;
+
+        &-input{
+          padding: 1rem;
+          width: 100%;
+          background: none;
+        }
+
+        &-inputIcon{
+          padding: 1rem;
+        }
+      }
+
+      &-table{
+        border: 2px solid #efefef;
+        border-radius: 10px;
+
+        &-btn{
+          background: none;
+          margin: .5rem;
+
+          &-iconEdit{
+            color: #6b00ff;
+            cursor: pointer;
+          }
+
+          &-iconDelete{
+            color: red;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &-addEndEdit{
+      width: 100%;
+
+      &-title{
+
+      }
+
+      &-form{
+        display: flex;
+        align-items: start;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        &-input{
+          background: #efefef;
+          width: 100%;
+          padding: 1rem;
+          border-radius: 10px;
+          font-size: 1.1rem;
+        }
+
+        &-btn{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: .5rem;
+          padding: 1rem;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 1s;
+          width: 100%;
+          background: #6b00ff;
+
+          &:hover{
+            background: #6b00ff;
+            color: white;
+            transition: 1s;
+          }
+        }
+      }
+    }
+  }
+}
