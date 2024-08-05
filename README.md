@@ -1,27 +1,33 @@
 # AppContactList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+AppContactList é uma aplicação web construída com Angular que permite aos usuários gerenciar uma lista de contatos. A aplicação inclui funcionalidades de autenticação, criação de conta, recuperação de senha, e um CRUD (Create, Read, Update, Delete) para a lista de contatos. A autenticação e o armazenamento de dados são realizados utilizando o Firebase.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Autenticação de Usuário**: Login com Google ou com e-mail e senha.
+- **Criação de Conta**: Usuários podem criar uma conta usando seu e-mail.
+- **Recuperação de Senha**: Função de recuperação de senha por e-mail.
+- **Gerenciamento de Contatos**: Adicionar, visualizar, editar e deletar contatos.
+- **Segurança**: Acesso à lista de contatos é restrito aos usuários autenticados.
+- **Logout**: Possibilidade de sair da conta.
 
-## Code scaffolding
+## Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 15**
+- **Firebase**:
+  - Authentication
+  - Realtime Database
+- **AngularFire** (biblioteca Angular para Firebase)
 
-## Build
+## Configuração e Instalação
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Pré-requisitos
 
-## Running unit tests
+- Node.js e npm instalados
+- Conta no Firebase
+- Angular CLI instalado globalmente (`npm install -g @angular/cli`)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contribuição
 
-## Running end-to-end tests
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
