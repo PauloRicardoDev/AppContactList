@@ -32,7 +32,10 @@ $app-contact-list-theme: mat.define-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($app-contact-list-theme);
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+// regular style toast
+@import 'ngx-toastr/toastr';
 
 *{
   padding: 0;
@@ -52,7 +55,5 @@ $app-contact-list-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.textError{
-  margin-top: 1rem;
-  color: red;
-}
+
+

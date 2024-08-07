@@ -7,6 +7,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from "@angular/material/sort";
 import {Validator} from "../../../utils/validator";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,6 @@ import {Validator} from "../../../utils/validator";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  textError: string = '';
   contacts!: Observable<any[]>;
   contact: any = { name: '', email: '', telephone: '' };
   isEditMode: boolean = false;
@@ -29,7 +29,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -57,6 +58,7 @@ export class HomeComponent implements OnInit {
 
   deleteContact(key: string) {
     this.contactService.deleteContact(key);
+    this.toastr.success('Contato Deletado com sucesso', 'Contato');
   }
 
   addNewContact() {
@@ -70,10 +72,11 @@ export class HomeComponent implements OnInit {
       this.contact = { name: '', email: '', telephone: '' };
     } else {
       if (!Validator.isValidEmail(this.contact.email)) {
-        this.textError = 'Email inválido.';
+        this.toastr.error('Email inválido', 'Erro');
         this.contact.email = ''
       }else{
         this.contactService.addContact(this.contact);
+        this.toastr.success('Contato Salvo com sucesso', 'Contato');
         this.contact = { name: '', email: '', telephone: '' };
       }
     }

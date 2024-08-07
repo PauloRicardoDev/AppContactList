@@ -15,6 +15,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import { PhoneMaskDirective } from './phone-mask.directive';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PhoneMaskDirective } from './phone-mask.directive';
         MatTableModule,
         MatPaginatorModule,
         MatSortModule,
+      ToastrModule.forRoot(), // ToastrModule added
     ],
   providers: [],
   bootstrap: [AppComponent]

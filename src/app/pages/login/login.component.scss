@@ -23,6 +23,7 @@
 
     &-title{
       font-size: 2rem;
+      color: white;
     }
 
     &-subtitle{
@@ -42,8 +43,10 @@
         width: 100%;
         padding: 1rem;
         border-radius: 10px;
-        background: #efefef;
+        background:none;
+        border: 2px solid #c0c0c0;
         font-size: 1.1rem;
+        color: white;
       }
 
       &-btn{
@@ -63,13 +66,13 @@
       cursor: pointer;
       transition: .5s;
       padding-bottom: .2rem;
-      border-bottom: 2px solid #c0c0c0;
+      color: #ffffff;
 
       &:hover{
         font-weight: bolder;
-        color: #ff0068;
+        color: #000000;
         transition: .5s;
-        border-bottom: 2px solid #ff0068;
+        //border-bottom: 2px solid #8900ff;
       }
     }
 
@@ -93,28 +96,28 @@
       justify-content: flex-start;
       gap: .5rem;
       font-size: 1.2rem;
-      color:#6b00ff;
+      color: #ffffff;
       cursor: pointer;
       transition: 1s;
       font-weight: bolder;
-      padding-bottom: .2rem;
-      border-bottom: 2px solid #6b00ff;
+      background: #6b00ff;
+      padding: .5rem 1rem;
+      border-radius: 10px;
 
       &:hover{
-        color: #ff0068;
+        background: #ff0068;
         transition: 1s;
-        border-bottom: 2px solid #ff0068;
       }
     }
 
     &-rules{
-      color: #6b00ff;
+      color: #ffffff;
       font-size: .8rem;
     }
   }
 
   &__error{
-    color: red;
+    color: #ffacac;
     font-size: .7rem;
   }
 }
@@ -145,4 +148,8 @@
       border-radius: 10px;
     }
   }
+}
+::placeholder {
+  color: #b7b7b7;
+  opacity: 1; /* para garantir que a cor seja aplicada completamente */
 }

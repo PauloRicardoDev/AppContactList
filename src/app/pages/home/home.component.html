@@ -2,7 +2,7 @@
   <header class="main__header">
     <aside class="main__header-containerLogo">
       <img class="main__header-containerLogo-img" src="/assets/svg/logo.svg" alt="logo na cor azul">
-      <span class="main__header-containerLogo-text">AppContactList</span>
+      <span class="main__header-containerLogo-text">MeusContatosApp</span>
     </aside>
     <button (click)="logout()" class="main__header-btn">
       <span class="material-symbols-outlined">logout</span>
@@ -24,7 +24,6 @@
     <div class="main__contacts-addEndEdit">
       <h2 class="main__contacts-addEndEdit-title">{{ isEditMode ? 'Editar Contato' : 'Adicionar Contato' }}</h2>
       <p>Preencha os campos corretamente!</p>
-      <p class="textError">{{textError}}</p>
       <form class="main__contacts-addEndEdit-form" (ngSubmit)="saveContact()">
         <input class="main__contacts-addEndEdit-form-input" type="text"
                [(ngModel)]="contact.name" name="name" placeholder="Nome" required>

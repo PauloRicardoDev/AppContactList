@@ -1,11 +1,11 @@
 <main class="login">
   <section class="login__container" *ngIf="!openRecoverPassword && !openRegisterUser">
+    <img width="150px" src="/assets/svg/logowithtext.svg">
     <button class="login__container-btnRegister" (click)="openRegister()">
       <span class="material-symbols-outlined">person_add</span>
       <p>Criar Conta</p>
     </button>
     <h2 class="login__container-title">Login</h2>
-    <p *ngIf="textError" class="login__error">{{textError}}</p>
     <form class="login__container-form" (ngSubmit)="login()">
       <input class="login__container-form-input" type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
       <input class="login__container-form-input" type="password" [(ngModel)]="password" name="password" placeholder="Password" required>
@@ -18,7 +18,7 @@
         </ng-template>
       </button>
     </form>
-    <button class="login__container-btnInfoRules" style="padding: .5rem; border-radius: 10px" (click)="openRules()">+ Infos sobre senha</button>
+<!--    <button class="login__container-btnInfoRules" style="padding: .5rem; border-radius: 10px" (click)="openRules()">+ Infos sobre senha</button>-->
     <ul *ngIf="openRulesPassword">
       <li *ngFor="let item of password_rules">
         <span class="login__container-rules">{{item.name}}</span>
@@ -36,12 +36,12 @@
   </section>
 
   <section class="recoverPassword__container" *ngIf="openRecoverPassword">
+    <img width="150px" src="/assets/svg/logowithtext.svg">
     <button class="recoverPassword__container-btn" (click)="openRecover()">
       <span class="material-symbols-outlined">undo</span>
       <p>Voltar para login</p>
     </button>
     <h2 class="recoverPassword__container-title">Recuperar Senha</h2>
-    <p *ngIf="textError" class="login__error">{{textError}}</p>
     <form class="recoverPassword__container-form" (ngSubmit)="recoverPassword()">
       <input class="recoverPassword__container-form-input" type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
       <button [disabled]="email === '' || isLoading" class="register__container-form-btn" type="submit">
@@ -57,13 +57,13 @@
 
 
   <section class="register__container" *ngIf="openRegisterUser">
+    <img width="150px" src="/assets/svg/logowithtext.svg">
     <button class="register__container-btn" (click)="openRegister()">
       <span class="material-symbols-outlined">undo</span>
       <p>Voltar para login</p>
     </button>
     <h2 class="register__container-title">Registrar</h2>
     <span  class="register__container-subtitle">* Preencha os campos corretamente</span>
-    <p *ngIf="textError" class="login__error">{{textError}}</p>
 
     <form class="register__container-form"  (ngSubmit)="register()">
       <input class="register__container-form-input" type="email" [(ngModel)]="email" name="email" placeholder="Email" required>

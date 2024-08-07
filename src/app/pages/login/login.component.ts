@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from "../../../services/auth.service";
 import { Validator } from "../../../utils/validator";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-login',
@@ -11,36 +12,34 @@ import { Validator } from "../../../utils/validator";
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  textError: string = '';
   openRulesPassword: boolean = false;
   openRecoverPassword: boolean = false;
   openRegisterUser: boolean = false;
 
   isLoading: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private toastr: ToastrService) { }
 
   async login() {
     this.isLoading = true;
 
     if (!Validator.isValidEmail(this.email)) {
-      this.textError = 'Email inválido.';
+      this.toastr.error('Email inválido', 'Erro');
       this.isLoading = false;
       return;
     }
 
     if (!Validator.isValidPassword(this.password)) {
-      this.textError = 'Senha inválida';
+      this.toastr.error('Senha inválida', 'Erro');
       this.isLoading = false;
       return;
     }
 
     try {
-      this.textError = '';
       await this.authService.login(this.email, this.password);
       this.router.navigate(['/home']);
     } catch (error) {
-      this.textError = 'Falha no login. Verifique suas credenciais.';
+      this.toastr.error('Falha no login. Verifique suas credenciais', 'Erro');
     } finally {
       this.isLoading = false;
     }
@@ -51,7 +50,7 @@ export class LoginComponent {
       await this.authService.loginWithGoogle();
       this.router.navigate(['/home']);
     } catch (error) {
-      this.textError = 'Falha ao fazer login com Google.';
+      this.toastr.error('Falha ao fazer login com Google.', 'Erro');
     }
   }
 
@@ -59,7 +58,7 @@ export class LoginComponent {
     this.isLoading = true;
 
     if (!Validator.isValidEmail(this.email)) {
-      this.textError = 'Email inválido.';
+      this.toastr.error('Email inválido', 'Erro');
       this.isLoading = false;
       return;
     }
@@ -67,25 +66,25 @@ export class LoginComponent {
     try {
       await this.authService.recoverPassword(this.email);
       this.email = '';
-      this.textError = 'Instruções para recuperação de senha enviadas para seu email.';
+      this.toastr.warning('Instruções para recuperação de senha enviadas para seu email.',
+        'Atenção');
     } catch (error) {
-      this.textError = 'Falha ao tentar recuperar a senha.';
+      this.toastr.error('Falha ao tentar recuperar a senha', 'Erro');
     }finally {
       this.isLoading = false;
     }
   }
 
   async register() {
-
     this.isLoading = true;
     if (!Validator.isValidEmail(this.email)) {
-      this.textError = 'Email inválido.';
+      this.toastr.error('Email inválido', 'Erro');
       this.isLoading = false;
       return;
     }
 
     if (!Validator.isValidPassword(this.password)) {
-      this.textError = 'Senha inválida';
+      this.toastr.error('Senha inválida, a senha deve seguir o padrão de segurança', 'Senha inválida');
       this.isLoading = false;
       return;
     }
@@ -106,12 +105,12 @@ export class LoginComponent {
   }
 
   openRecover(){
-    this.textError = '';
+    this.email = '';
+    this.password = '';
     this.openRecoverPassword = this.openRecoverPassword ? false : true;
   }
 
   openRegister(){
-    this.textError = '';
     this.email = '';
     this.password = '';
     this.openRegisterUser = this.openRegisterUser ? false : true;
