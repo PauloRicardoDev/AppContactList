@@ -21,6 +21,13 @@
     -webkit-backdrop-filter: blur(10px);
     border-radius: 50px;
 
+    &-obs{
+      font-size: .85rem;
+      font-weight: bolder;
+      color: #ff7cb1;
+      display: none;
+    }
+
     &-title{
       font-size: 2rem;
       color: white;
@@ -121,6 +128,7 @@
     color: #ffacac;
     font-size: .7rem;
   }
+
 }
 
 @media (max-width: 500px) {
@@ -142,6 +150,13 @@
       backdrop-filter: blur(50px);
       -webkit-backdrop-filter: blur(10px);
       border-radius: 50px;
+
+      &-obs{
+        font-size: .85rem;
+        font-weight: bolder;
+        color: #ff7cb1;
+        display: flex;
+      }
     }
   }
 }

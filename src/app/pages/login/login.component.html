@@ -1,6 +1,11 @@
 <main class="login">
   <section class="login__container" *ngIf="!openRecoverPassword && !openRegisterUser">
     <img width="150px" src="/assets/svg/logo.svg">
+
+    <span class="login__container-obs">
+      Para uma melhor experiência use em dispositivos e como desktop e tablets
+    </span>
+
     <button class="login__container-btnRegister" (click)="openRegister()">
       <span class="material-symbols-outlined">person_add</span>
       <p>Criar Conta</p>
@@ -37,6 +42,9 @@
 
   <section class="recoverPassword__container" *ngIf="openRecoverPassword">
     <img width="150px" src="/assets/svg/logo.svg">
+    <span class="login__container-obs">
+      Para uma melhor experiência use em dispositivos e como desktop e tablets
+    </span>
     <button class="recoverPassword__container-btn" (click)="openRecover()">
       <span class="material-symbols-outlined">undo</span>
       <p>Voltar para login</p>
@@ -55,9 +63,11 @@
     </form>
   </section>
 
-
   <section class="register__container" *ngIf="openRegisterUser">
     <img width="150px" src="/assets/svg/logo.svg">
+    <span class="login__container-obs">
+      Para uma melhor experiência use em dispositivos e como desktop e tablets
+    </span>
     <button class="register__container-btn" (click)="openRegister()">
       <span class="material-symbols-outlined">undo</span>
       <p>Voltar para login</p>
@@ -85,7 +95,6 @@
       </li>
     </ul>
   </section>
-
 </main>
 
 
