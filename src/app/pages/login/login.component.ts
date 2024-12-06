@@ -76,7 +76,7 @@ export class LoginComponent {
   }
 
   async register() {
-    this.isLoading = true;
+
     if (!Validator.isValidEmail(this.email)) {
       this.toastr.error('Email inválido', 'Erro');
       this.isLoading = false;
@@ -88,6 +88,8 @@ export class LoginComponent {
       this.isLoading = false;
       return;
     }
+
+    this.isLoading = true;
 
     try {
       await this.authService.register(this.email, this.password);
@@ -127,13 +129,13 @@ const password_rules = [
     name:'Incluindo uma letra maiúscula.'
   },
   {
-    name:'Uma letra minúscula.'
+    name:'Mínimo uma letra minúscula.'
   },
   {
-    name:'Um número.'
+    name:'Mínimo um número.'
   },
   {
-    name:'Um caractere especial.'
+    name:'Mínimo um caractere especial.'
   }
 ]
 

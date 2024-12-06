@@ -1,5 +1,5 @@
 .login, .recoverPassword, .register{
-  background-image: url("/assets/banner-background-login.png");
+  background-image: url("/assets/banner-background-login.webp");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -10,16 +10,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     width: 400px;
     gap: 1rem;
-    padding: 2rem;
+    padding: 2.5rem;
     background: rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 10px;
+    border-radius: 50px;
 
     &-title{
       font-size: 2rem;
@@ -28,6 +28,7 @@
 
     &-subtitle{
       font-size: .8rem;
+      color: #d299ff;
     }
 
     &-form{
@@ -41,17 +42,18 @@
 
       &-input{
         width: 100%;
-        padding: 1rem;
-        border-radius: 10px;
-        background:none;
-        border: 2px solid #c0c0c0;
-        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+        border-radius: 50px;
+        background: none;
+        border: 2px solid #d7d7d7;
+        font-size: .95rem;
         color: white;
       }
 
       &-btn{
         padding: 1rem 2rem;
-        border-radius: 10px;
+        border-radius: 50px;
+        min-width: 120px;
         cursor: pointer;
         transition: .5s;
       }
@@ -69,8 +71,7 @@
       color: #ffffff;
 
       &:hover{
-        font-weight: bolder;
-        color: #000000;
+        color: rgb(255, 137, 162);
         transition: .5s;
         //border-bottom: 2px solid #8900ff;
       }
@@ -81,6 +82,7 @@
       color: white;
       cursor: pointer;
       transition: 1s;
+      border-radius: 50px;
 
       &:hover{
         background: #ff0068;
@@ -95,23 +97,22 @@
       align-items: center;
       justify-content: flex-start;
       gap: .5rem;
-      font-size: 1.2rem;
+      font-size: .85rem;
       color: #ffffff;
       cursor: pointer;
       transition: 1s;
-      font-weight: bolder;
-      background: #6b00ff;
-      padding: .5rem 1rem;
-      border-radius: 10px;
+      background: rgb(255, 45, 90);
+      padding: .75rem 1.5rem;
+      border-radius: 50px;
 
       &:hover{
-        background: #ff0068;
+        background: rgb(155, 0, 44);
         transition: 1s;
       }
     }
 
     &-rules{
-      color: #ffffff;
+      color: #cbcbcb;
       font-size: .8rem;
     }
   }
@@ -124,11 +125,6 @@
 
 @media (max-width: 500px) {
   .login, .recoverPassword, .register{
-    background-image: url("/assets/banner-background-login-responsive.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-
 
     &__container{
       position: relative;
@@ -136,7 +132,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       display: flex;
-      align-items: start;
+      align-items: flex-start;
       justify-content: center;
       flex-direction: column;
       width: 300px;
@@ -145,7 +141,7 @@
       background: rgba(255, 255, 255, 0.18);
       backdrop-filter: blur(50px);
       -webkit-backdrop-filter: blur(10px);
-      border-radius: 10px;
+      border-radius: 50px;
     }
   }
 }

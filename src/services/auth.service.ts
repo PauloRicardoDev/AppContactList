@@ -29,6 +29,7 @@ export class AuthService {
   }
 
   async register(email: string, password: string): Promise<void> {
+
     try {
       await this.afAuth.createUserWithEmailAndPassword(email, password);
       console.log('Registro realizado com sucesso');

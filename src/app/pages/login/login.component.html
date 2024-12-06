@@ -1,6 +1,6 @@
 <main class="login">
   <section class="login__container" *ngIf="!openRecoverPassword && !openRegisterUser">
-    <img width="150px" src="/assets/svg/logowithtext.svg">
+    <img width="150px" src="/assets/svg/logo.svg">
     <button class="login__container-btnRegister" (click)="openRegister()">
       <span class="material-symbols-outlined">person_add</span>
       <p>Criar Conta</p>
@@ -36,7 +36,7 @@
   </section>
 
   <section class="recoverPassword__container" *ngIf="openRecoverPassword">
-    <img width="150px" src="/assets/svg/logowithtext.svg">
+    <img width="150px" src="/assets/svg/logo.svg">
     <button class="recoverPassword__container-btn" (click)="openRecover()">
       <span class="material-symbols-outlined">undo</span>
       <p>Voltar para login</p>
@@ -57,7 +57,7 @@
 
 
   <section class="register__container" *ngIf="openRegisterUser">
-    <img width="150px" src="/assets/svg/logowithtext.svg">
+    <img width="150px" src="/assets/svg/logo.svg">
     <button class="register__container-btn" (click)="openRegister()">
       <span class="material-symbols-outlined">undo</span>
       <p>Voltar para login</p>
@@ -78,7 +78,7 @@
       </button>
 
     </form>
-    <span>Nota Importante</span>
+    <span style="color:  rgb(255,168,186)">Nota Importante</span>
     <ul>
       <li *ngFor="let item of password_rules">
         <span class="login__container-rules">{{item.name}}</span>

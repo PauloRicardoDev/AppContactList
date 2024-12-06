@@ -1,14 +1,18 @@
 <main class="main">
   <header class="main__header">
     <aside class="main__header-containerLogo">
-      <img class="main__header-containerLogo-img" src="/assets/svg/logo.svg" alt="logo na cor azul">
+      <img class="main__header-containerLogo-img" src="/assets/svg/logo2.svg" alt="logo na cor azul">
       <span class="main__header-containerLogo-text">MeusContatosApp</span>
     </aside>
     <button (click)="logout()" class="main__header-btn">
-      <span class="material-symbols-outlined">logout</span>
+      <i class="bi bi-box-arrow-right"></i>
       <p>Logout</p>
     </button>
   </header>
+
+  <span class="main__obs">
+    Para uma melhor experiência use em dispositivos e como desktop e tablets
+  </span>
 
   <section class="main__contacts">
     <div class="main__contacts-salutation">
@@ -35,7 +39,7 @@
                appPhoneMask>
         <button [disabled]="contact.name === '' || contact.email === '' || contact.telephone === '' "
                 class="main__contacts-addEndEdit-form-btn" type="submit">
-          <span class="material-symbols-outlined">add</span>
+          <i class="bi bi-plus-square"></i>
           {{ isEditMode ? 'Salvar' : 'Adicionar Contato' }}
         </button>
       </form>
@@ -97,6 +101,9 @@
           [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
         </mat-paginator>
       </div>
+
     </div>
   </section>
+
+
 </main>

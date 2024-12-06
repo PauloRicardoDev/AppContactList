@@ -45,7 +45,7 @@
 
     &__contacts{
       display: flex;
-      align-items: start;
+      align-items:flex-start;
       justify-content: flex-start;
       flex-direction: column;
       min-height: 70vh;
@@ -103,7 +103,7 @@
 
         &-form{
           display: flex;
-          align-items: start;
+          align-items: flex-start;;
           justify-content: flex-start;
           flex-direction: column;
           gap: 1rem;
@@ -137,6 +137,7 @@
         }
       }
     }
+
   }
 }
 
@@ -194,9 +195,17 @@
       }
     }
 
+    &__obs{
+      color: #ff0068;
+      font-size: 2rem;
+      font-weight: bolder;
+      text-align: center;
+      display: flex;
+    }
+
     &__contacts{
       display: flex;
-      align-items: start;
+      align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
       min-height: 70vh;
@@ -254,7 +263,7 @@
 
         &-form{
           display: flex;
-          align-items: start;
+          align-items: flex-start;
           justify-content: flex-start;
           flex-direction: column;
           gap: 1rem;

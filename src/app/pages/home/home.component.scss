@@ -1,10 +1,5 @@
 @import "home-responsive.component";
-
 .main{
-  //background-image: url("/assets/banner-background-contacts.png");
-  //background-size: cover;
-  //background-repeat: no-repeat;
-  //background-position: center;
   height: 100vh;
 
   &__header{
@@ -25,7 +20,7 @@
 
       &-text{
         font-weight: bold;
-        color: #6b00ff;
+        color: rgb(255, 45, 90);
       }
     }
 
@@ -33,24 +28,32 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      background: #6b00ff;
-      padding: .5rem 1rem;
-      border-radius: 10px;
+      background: rgb(255, 45, 90);
+      padding: .75rem 1rem;
+      border-radius: 50px;
       color: white;
       gap: .5rem;
       transition: 1s;
       cursor: pointer;
 
       &:hover{
-        background: #ff0068;
+        background: #6b00ff;
         transition: 1s;
       }
     }
   }
 
+  &__obs{
+    color: #ff0068;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+    display: none;
+  }
+
   &__contacts{
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     min-height: 70vh;
@@ -103,7 +106,7 @@
             transition: 1s;
 
             &:hover{
-              background: #6b00ff;
+              background: rgb(255, 45, 90);
               color: white;
               transition: 1s;
             }
@@ -136,7 +139,7 @@
         align-items: center;
         justify-content: space-between;
         width: 500px;
-        border-radius: 10px;
+        border-radius: 50px;
         background:#efefef;
         margin: 1rem 0;
 
@@ -144,6 +147,7 @@
           padding: 1rem;
           width: 100%;
           background: none;
+          border-radius: 50px;
         }
 
         &-inputIcon{
@@ -181,7 +185,7 @@
 
       &-form{
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         justify-content: flex-start;
         gap: 1rem;
         margin-top: 1rem;
@@ -189,9 +193,9 @@
         &-input{
           background: #efefef;
           width: 100%;
-          padding: 1rem;
-          border-radius: 10px;
-          font-size: 1.1rem;
+          padding: .75rem 1rem;
+          border-radius: 50px;
+          font-size: .95rem;
         }
 
         &-btn{
@@ -199,16 +203,16 @@
           align-items: center;
           justify-content: center;
           gap: .5rem;
-          padding: 1rem;
-          border-radius: 10px;
+          padding: .75rem 1rem;
+          border-radius: 50px;
           cursor: pointer;
           transition: 1s;
           width: 100%;
-          background: #6b00ff;
+          background: rgb(255, 45, 90);
           color: white;
 
           &:hover{
-            background: #ff0068;
+            background: #6b00ff;
             color: white;
             transition: 1s;
           }
@@ -217,3 +221,5 @@
     }
   }
 }
+
+

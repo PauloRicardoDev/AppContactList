@@ -36,6 +36,7 @@ $app-contact-list-theme: mat.define-light-theme((
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 // regular style toast
 @import 'ngx-toastr/toastr';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 *{
   padding: 0;
@@ -48,12 +49,88 @@ $app-contact-list-theme: mat.define-light-theme((
 
 .line{
   height: 1px;
-  background: #b6b6b6;
+  background: rgba(197, 197, 197, 0.08);
   width: 100%;
+  margin: 1rem 0;
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 
+//paginação
+
+.mat-mdc-select-value-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--font_primary);
+}
+.mat-mdc-select-arrow svg {
+  color: var(--font_primary);
+  fill: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mat-mdc-paginator-range-actions {
+  display: flex;
+  align-items: center;
+  background: var(--lineTable);
+  border-radius: 30px;
+}
+.paginator__custom{
+
+  border-radius: 50px;
+  //width: 500px;
+  margin: 1rem auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+.mat-mdc-paginator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+
+@media (max-width: 500px) {
+  .mat-mdc-paginator-container {
+    transform: scale(.8);
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    padding: 0 8px;
+    border: 2px solid rgba(255, 0, 104, 0.27);
+    border-radius: 50px;
+    flex-wrap:nowrap;
+    width: 100%;
+  }
+
+  .mat-mdc-paginator-range-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+  }
+
+  .mat-mdc-paginator-range-label {
+    margin: 0 2rem 0 2rem !important;
+  }
+
+  .mat-mdc-paginator-page-size {
+    display: none !important;
+    align-items: baseline;
+    margin-right: 8px;
+  }
+}
 
