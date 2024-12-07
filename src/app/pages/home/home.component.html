@@ -72,7 +72,9 @@
 
           <ng-container matColumnDef="telephone">
             <th class="item" mat-header-cell *matHeaderCellDef mat-sort-header> Telefone </th>
-            <td class="item" style="font-weight: bold; color: rgb(80,29,124)" mat-cell *matCellDef="let contact"> {{ contact.telephone }} </td>
+            <td class="item" style="font-weight: bold; color: rgb(80,29,124)" mat-cell *matCellDef="let contact">
+              {{ formatTelephone(contact.telephone) }}
+            </td>
           </ng-container>
 
           <ng-container matColumnDef="actions">

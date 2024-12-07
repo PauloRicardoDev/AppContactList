@@ -93,4 +93,19 @@ export class HomeComponent implements OnInit {
     }
     return value;
   }
+
+  formatTelephone(value: string | number): string {
+    const rawValue = value.toString().replace(/\D/g, '');
+
+    if (rawValue.length === 10) {
+      // Formato: (XX) XXXX-XXXX
+      return rawValue.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+    } else if (rawValue.length === 11) {
+      // Formato: (XX) XXXXX-XXXX
+      return rawValue.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    }
+
+    // Retorna o valor original se não atender aos formatos esperados
+    return value.toString();
+  }
 }
