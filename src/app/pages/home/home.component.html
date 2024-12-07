@@ -54,15 +54,15 @@
         <div *ngIf="contactList.length > 0" class="main__contacts-containerList-search">
           <input class="main__contacts-containerList-search-input"
                  (keyup)="applyFilter($event)" placeholder="Pesquisar">
-          <span class="main__contacts-containerList-search-inputIcon material-symbols-outlined">search</span>
+          <i class="main__contacts-containerList-search-inputIcon bi bi-search"></i>
         </div>
 
         <table *ngIf="contactList.length > 0" mat-table [dataSource]="dataSource" matSort
                class="main__contacts-containerList-table">
 
           <ng-container matColumnDef="name">
-            <th class="item"  mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
-            <td class="item"  mat-cell *matCellDef="let contact"> {{ contact.name }} </td>
+            <th class="item" mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+            <td class="item" style="font-weight: bold; color: rgb(255, 45, 90)" mat-cell *matCellDef="let contact"> {{ transform(contact.name) }} </td>
           </ng-container>
 
           <ng-container matColumnDef="email" >
@@ -72,17 +72,17 @@
 
           <ng-container matColumnDef="telephone">
             <th class="item" mat-header-cell *matHeaderCellDef mat-sort-header> Telefone </th>
-            <td class="item" mat-cell *matCellDef="let contact"> {{ contact.telephone }} </td>
+            <td class="item" style="font-weight: bold; color: rgb(80,29,124)" mat-cell *matCellDef="let contact"> {{ contact.telephone }} </td>
           </ng-container>
 
           <ng-container matColumnDef="actions">
             <th class="item" mat-header-cell *matHeaderCellDef> Ações </th>
             <td class="item" mat-cell *matCellDef="let contact">
               <button class="main__contacts-containerList-table-btn" (click)="editContact(contact)">
-                <span class="main__contacts-containerList-table-btn-iconEdit material-symbols-outlined">edit</span>
+                <i class="main__contacts-containerList-table-btn-iconEdit bi bi-pencil-square"></i>
               </button>
               <button class="main__contacts-containerList-table-btn" (click)="deleteContact(contact.key)">
-                <span class="main__contacts-containerList-table-btn-iconDelete material-symbols-outlined">delete</span>
+                <i class="main__contacts-containerList-table-btn-iconDelete bi bi-trash"></i>
               </button>
             </td>
           </ng-container>
