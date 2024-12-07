@@ -2,6 +2,7 @@
   background-image: url("/assets/banner-background-login.webp");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   height: 100vh;
 
   &__container{
@@ -16,7 +17,7 @@
     width: 400px;
     gap: 1rem;
     padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 50px;
@@ -30,7 +31,7 @@
 
     &-title{
       font-size: 2rem;
-      color: white;
+      color: rgb(255, 45, 90);
     }
 
     &-subtitle{
@@ -52,9 +53,9 @@
         padding: 0.75rem 1rem;
         border-radius: 50px;
         background: none;
-        border: 2px solid #d7d7d7;
+        border: 2px solid #ff7cb1;
         font-size: .95rem;
-        color: white;
+        color: rgb(255, 45, 90);
       }
 
       &-btn{
@@ -75,10 +76,10 @@
       cursor: pointer;
       transition: .5s;
       padding-bottom: .2rem;
-      color: #ffffff;
+      color: rgb(255, 45, 90);
 
       &:hover{
-        color: rgb(255, 137, 162);
+        color: rgb(43, 0, 82);
         transition: .5s;
         //border-bottom: 2px solid #8900ff;
       }
@@ -119,7 +120,7 @@
     }
 
     &-rules{
-      color: #cbcbcb;
+      color: rgb(255, 45, 90);
       font-size: .8rem;
     }
   }
@@ -146,7 +147,7 @@
       width: 300px;
       gap: 1rem;
       padding: 2rem;
-      background: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(50px);
       -webkit-backdrop-filter: blur(10px);
       border-radius: 50px;
@@ -161,6 +162,6 @@
   }
 }
 ::placeholder {
-  color: #b7b7b7;
+  color: #ff7cb1;
   opacity: 1; /* para garantir que a cor seja aplicada completamente */
 }
