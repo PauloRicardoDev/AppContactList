@@ -2,7 +2,6 @@
   background-image: url("/assets/banner-background-login.webp");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
   height: 100vh;
 
   &__container{
@@ -148,14 +147,42 @@
       gap: 1rem;
       padding: 2rem;
       background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(50px);
+      backdrop-filter: blur(150px);
       -webkit-backdrop-filter: blur(10px);
       border-radius: 50px;
 
+      &-form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0 auto;
+        width: 92%;
+
+        &-input{
+          width: 100%;
+          padding: 0.75rem 1rem;
+          border-radius: 50px;
+          background: none;
+          border: 2px solid #ff7cb1;
+          font-size: .8rem;
+          color: rgb(255, 45, 90);
+        }
+
+        &-btn{
+          padding: 1rem 2rem;
+          border-radius: 50px;
+          min-width: 120px;
+          cursor: pointer;
+          transition: .5s;
+        }
+      }
+
       &-obs{
-        font-size: .85rem;
+        font-size: .7rem;
         font-weight: bolder;
-        color: #ff7cb1;
+        color: #91003b;
         display: flex;
       }
     }
